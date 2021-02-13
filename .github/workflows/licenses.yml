@@ -13,7 +13,7 @@ jobs:
         java-version: '11.0.1'
     - name: Create spdx-file latest version ort.
       id: spdx-builder-latest
-      uses: philips-software/spdx-action@v0.1.1
+      uses: philips-software/spdx-action@v0.2.0
       with:
         project: my-project
         ort-version: latest 
@@ -23,10 +23,10 @@ jobs:
         path: ${{ steps.spdx-builder-latest.outputs.spdx-file }}
     - name: Create spdx-file ort version 2020-10-12
       id: spdx-builder-2020-10-12
-      uses: philips-software/spdx-action@v0.1.1
+      uses: philips-software/spdx-action@v0.2.0
       with:
         project: my-project
-        ort-version: 2020-10-12 
+        ort-version: '2020-10-12' 
     - uses: actions/upload-artifact@v2
       with:
         name: licenses-2020-10-12
