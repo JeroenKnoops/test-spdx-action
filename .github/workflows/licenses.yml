@@ -23,10 +23,10 @@ jobs:
         path: ${{ steps.spdx-builder-latest.outputs.spdx-file }}
     - name: Create spdx-file ort version 2020-10-12
       id: spdx-builder-2020-10-12
-      uses: philips-software/spdx-action@main
+      uses: philips-software/spdx-action@bring-your-own-ort
       with:
         project: my-project
-        ort-version: '2020-10-12' 
+        ort-file: test.json
     - uses: actions/upload-artifact@v2
       with:
         name: licenses-2020-10-12
