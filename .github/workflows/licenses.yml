@@ -13,7 +13,7 @@ jobs:
         java-version: '11.0.1'
     - name: Create spdx-file ort version bring-your-own-ort
       id: spdx-builder
-      uses: philips-software/spdx-action@bring-your-own-ort-2
+      uses: philips-software/spdx-action@bring-your-own-ort
       with:
         project: my-project
         ort-file: test.json
