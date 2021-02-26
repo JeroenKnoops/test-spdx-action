@@ -11,17 +11,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: '11.0.1'
-    - name: Create spdx-file latest version ort.
-      id: spdx-builder-latest
-      uses: philips-software/spdx-action@main
-      with:
-        project: my-project
-        ort-version: latest 
-    - uses: actions/upload-artifact@v2
-      with:
-        name: licenses-latest
-        path: ${{ steps.spdx-builder-latest.outputs.spdx-file }}
-    - name: Create spdx-file ort version 2020-10-12
+    - name: Create spdx-file ort version bring-your-own-ort
       id: spdx-builder-2020-10-12
       uses: philips-software/spdx-action@bring-your-own-ort
       with:
