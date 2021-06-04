@@ -46,3 +46,15 @@ jobs:
         name: licenses-2020-10-12
         path: ${{ steps.spdx-builder-2020-10-12.outputs.spdx-file }}
 
+    - name: Create spdx-file tree-based-input
+      id: spdx-builder-tree
+      uses: philips-software/spdx-action@tree-based-input
+      with:
+        project: my-project
+        mode: 'tree'
+        tree: 'alembic==1.5.8\n  - Mako [required: Any, installed: 1.1.4]\n    - MarkupSafe [required: >=0.9.2, installed: 1.1.1]'
+        format: 'pipenv'          
+    - uses: actions/upload-artifact@v2
+      with:
+        name: licenses-tree
+        path: ${{ steps.spdx-builder-tree.outputs.spdx-file }}
