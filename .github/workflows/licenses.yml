@@ -10,13 +10,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Set dependency tree
+      id: dependencies
+      run: |
+        dependencies=$(cat create-react-app-dependencies.txt)
+        echo "::set-output name=DEPENDENCIES::$dependencies"
+
     - name: Create spdx-file tree-based-input
       id: spdx-builder-tree
       uses: philips-software/spdx-action@tree-based-input
       with:
         project: my-project
         mode: 'tree'
-        tree: "$(cat create-react-app-dependencies.txt)"
+        tree: ${{ steps.dependencies.outputs.DEPENDENCIES }}
         format: 'npm'
 
     - uses: actions/upload-artifact@v2
