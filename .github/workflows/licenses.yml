@@ -13,7 +13,7 @@ jobs:
     - name: Set dependency tree
       id: dependencies
       run: |
-        dependencies=$(cat create-react-app-dependencies.txt)
+        dependencies="$(cat create-react-app-dependencies.txt)"
         echo "::set-output name=DEPENDENCIES::$dependencies"
 
     - name: Create spdx-file tree-based-input
@@ -22,7 +22,7 @@ jobs:
       with:
         project: my-project
         mode: 'tree'
-        tree: ${{ steps.dependencies.outputs.DEPENDENCIES }}
+        tree: "${{ steps.dependencies.outputs.DEPENDENCIES }}"
         format: 'npm'
 
     - uses: actions/upload-artifact@v2
