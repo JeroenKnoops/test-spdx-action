@@ -19,6 +19,9 @@ jobs:
         tree: 'create-react-app-dependencies.txt'
         format: 'npm'
 
+    - name: ls
+      run: ls -alh
+      
     - uses: actions/upload-artifact@v2
       with:
         name: licenses-tree
