@@ -1,13 +1,6 @@
 document:
-  title: "Create react-app"
-  organization: ""
-projects:
-  - id: "Yarn::test-spdx-action:0.1.0"
-    excluded:
-      - "annotation*"
-      - "archives"
-      - "runtime*"
-      - "test*"
-curations:
-  - purl: "Yarn::test-spdx-action:0.1.0"
-    license: "MIT"
+  title: "sample project spdx-action"
+  organization: "Philips Research"
+  comment: "This is an experimental tool"
+  key:
+  namespace: "https://research.philips.com/spdx-action"
