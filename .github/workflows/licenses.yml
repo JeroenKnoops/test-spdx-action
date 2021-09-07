@@ -38,7 +38,7 @@ jobs:
       - name: Generate provenance
         uses: slsa-framework/github-actions-demo@v0.1
         with:
-          artifact_path: ${{ steps.spdx-builder-tree.outputs.spdx-file }}
+          artifact_path: license-tree
 
       - name: Upload provenance
         uses: actions/upload-artifact@v2
