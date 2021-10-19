@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
+      - name: Yarn install
+        run: yarn install
       - name: gh-action-spdx-sbom-generator
         uses: niravpatel27/gh-action-spdx-sbom-generator@v1.0.0
         with:
